@@ -1,6 +1,11 @@
 import data from "./data/rickandmorty/rickandmorty.js"
 
 import {filtrarVivo} from "./data.js"
+/*
+import {filtrarGenero} from "./data.js" 
+
+import {filtrarEspecie} from "./data.js" 
+*/
 
 const characters = data.results // []
 
@@ -15,6 +20,7 @@ for (let i = 0; i < characters.length; i++) {
     
 }
 
+// eslint-disable-next-line no-console
 console.log(charactersHtml);
 
 document.getElementById('root').innerHTML = charactersHtml
@@ -26,15 +32,31 @@ tarjetas.addEventListener("click", function(){
     alert("deberia mostrar info tarjetas")
 })
 
-/*const findNames = characters.name.filter(function(personaje){
-    return personaje===characters.name})*/
 
-   // console.log (findNames)
 
     window.addEventListener('DOMContentLoaded', () => {
+        // eslint-disable-next-line no-console
         console.log(filtrarVivo(characters,"Dead"))
     });
 
 
-/*const findRick = characters.find(n) == n.name ==="Rick";
-console.log (findRick.name); */
+let opcionesStatus = document.getElementById("status");
+ opcionesStatus = document.createElement("option");
+ document.write(opcionesStatus);
+ 
+
+
+ /*function filterBy(){
+    let optionsSelected = document.getElementById("category");
+    let finalOption = optionsSelected.value;
+    return finalOption
+    }
+
+ document.getElementById("categoriesContainer").innerHTML = "opcionesFiltradas";
+    
+*/
+
+  /*   let optionStatus = document.getElementById("status") (filtrarVivo(characters, "Dead" || "Alive"))
+     let optionGender = document.getElementById("gender")(filtrarGenero(characters, "Female" || "Male"))
+     let optionSpecies =document.getElementById("species")(filtrarEspecie(characters, "Human" || "Alien"))
+*/

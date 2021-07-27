@@ -18,14 +18,21 @@
     <img src="./data/imagenes/Mask Group.png" alt="logo">
   </div>
 
+  <nav>
+    <label>Prueba filtrar personajes</label>
+    <button></button>
+  </nav>
+
   <body>
     <div class="filterBox">
       <label> Filtrar por</label>
-      <select id ="category" onchange="pickCategory();"
-        <option value="name">Nombre</option>
-        <option value="originPlace">Lugar de origen</option>
-        <option value="episode">Episodio</option>
+      <select id="category" onchange ="filterBy()">
+        <option disabled="">Escoge entre estas categorias</option>
+        <option id="status">Status</option>
+        <option id="gender">Género</option>
+        <option id="species">Especie</option>
       </select>
+      <div id= categoriesContainer></div>
       <input id=miInput type=search placeholder="Buscar por nombre">
     </div>
     <div class="cardContainer">
