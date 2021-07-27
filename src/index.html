@@ -3,25 +3,43 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Data Lovers</title>
+  <title>Data Lovers 15</title>
+  <meta name="viewport" content="width=device-width, user scalable=no, initial-scale=1.0
+  maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orienta&display=swap" rel="stylesheet">
 </head>
-<header>Rick y Morty</header>
-<main></main>
 
-<body>
-  <bere esta aqui></bere>
-  <div id=pruebaFiltro></div>
-  <label> Filtro por: </label>
-  <select id="status">
-    <option value="Alive">Alive</option>
-    <option value="Dead">Dead</option>
-  </select>
-  <button id= "name" type="button"> Sort Name</button>
-  <div id="data"></div>
+<div class=padre>
+  <header> Rick and Morty Universe</header>
+  <div class="logo">
+    <img src="./data/imagenes/Mask Group.png" alt="logo">
+  </div>
 
-  <script src="main.js" type="module"></script>
+  <nav>
+    <label>Prueba filtrar personajes</label>
+    <button></button>
+  </nav>
+
+  <body>
+    <div class="filterBox">
+      <label> Filtrar por</label>
+      <select id="category" onchange ="filterBy()">
+        <option disabled="">Escoge entre estas categorias</option>
+        <option id="status">Status</option>
+        <option id="gender">Género</option>
+        <option id="species">Especie</option>
+      </select>
+      <div id= categoriesContainer></div>
+      <input id=miInput type=search placeholder="Buscar por nombre">
+    </div>
+    <div class="cardContainer">
+      <div id="root"></div>
+      <script src="main.js" type="module"></script>
+    </div>
+</div>
 </body>
-<footer></footer>
 
 </html>
