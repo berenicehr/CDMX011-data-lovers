@@ -83,10 +83,6 @@ characterGender.forEach((filtrado=> {
 document.getElementById("root").innerHTML = mostrarFiltro
 })
 
-<<<<<<< HEAD
-/*document.getElementById('root').innerHTML = charactersHtml */
-=======
->>>>>>> 3ad41c098ef228e6083feea6d03dbb2df508188b
 
 
 //Filtrar por Especie
@@ -149,27 +145,8 @@ unknownStatusCharacters.innerHTML=`Not dead or alive (to be confirmed)
 Container3.appendChild(unknownStatusCharacters);
 */
 
-<<<<<<< HEAD
-document.getElementById("category1").addEventListener("change", function(){
-
-    const statusDead = document.getElementById("dead").value
-    const personajesFiltrados= filtrarVivo(characters, statusDead)
-    // eslint-disable-next-line no-console
-    console.log (personajesFiltrados)
-
-    /*
-    const container3= document.getElementById("categoriesContainer");
-    let unknownStatusCharacters= document.createElement ("div", "class=c3")
-    unknownStatusCharacters.innerHTML=`Not dead or alive (to be confirmed)
-    <br>${personajesFiltrados}`
-    container3.appendChild(unknownStatusCharacters);
-*/
-}
-)
-=======
 
 
 
 
  
->>>>>>> 3ad41c098ef228e6083feea6d03dbb2df508188b
