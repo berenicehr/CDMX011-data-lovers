@@ -112,6 +112,7 @@ document.getElementById("species").addEventListener("change", function(){
   //console.log(characterSpecie)
 })
 
+
 /* //Filtrar por Alfabeto
 document.getElementById("order").addEventListener("change", function(){
   const orderHtml = document.getElementById("order").value
