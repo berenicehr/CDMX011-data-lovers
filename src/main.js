@@ -47,6 +47,3 @@ const filtersName=document.getElementById("name");
 // eslint-disable-next-line no-undef
 // eslint-disable-next-line no-console
 console.log(filter)
-
-
-
