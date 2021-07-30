@@ -8,27 +8,35 @@ export const anotherExample = () => {
   return 'OMG';
 };
 
-/*function pickCategory(){
-  let opciones = document.getElementById("category");
 
-}
-*/
 
-export function filtrarVivo(data,tipo){
-  let resultado = data.filter(unpersonaje=>unpersonaje.status==tipo)
+//Fitrar por Status
+export function filterStatus(data,tipo){
+  let resultado = data.filter(character=>character.status==tipo)
   return resultado
 }
 
-
-export function filtrarGenero(data,tipo){
-  let gender = data.filter(personaje=>personaje.gender==tipo)
-  return gender
+//Filtar por Género
+export function filterGender(data,tipo){
+  let resultado = data.filter(character=>character.gender==tipo)
+  return resultado
 }
 
-export function filtrarEspecie(data,tipo){
-  let species = data.filter(personaje=>personaje.species==tipo)
-  return species
+//Filtrar por Especie
+export function filterSpecie(data,tipo){
+  let resultado = data.filter(character=>character.species==tipo)
+  return resultado
 }
 
-
-
+//Filtrar por Alfabeto
+/* 
+export const filterName = (data, order) => {
+  let resultado =data.sort((a, b) => {
+          if (a.name < b.name) {
+              return -1;
+          } else if (a.name> b.name) {
+              return 1;
+          } else {
+              return 0;
+          }}}
+      */

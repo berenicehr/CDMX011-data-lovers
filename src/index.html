@@ -9,37 +9,58 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orienta&display=swap" rel="stylesheet">
-</head>
+  <lin <div class=padre>
+    <header> Rick and Morty Universe</header>
+    <div class="logo">
+      <img src="./data/imagenes/Mask Group.png" alt="logo">
+    </div>
 
-<div class=padre>
-  <header> Rick and Morty Universe</header>
-  <div class="logo">
-    <img src="./data/imagenes/Mask Group.png" alt="logo">
+    <nav>
+      <label>Try our filter action on the show characters</label>
+    </nav>
+
+<body>
+  <div class="filterBox">
+    <label> Pick one between these categories</label>
+    <br>
+    <label>Status</label>
+    <select id="status">
+      <option  >Alive</option>
+      <option  ">Dead</option>
+      <option  >unknown</option>
+    </select>
+    <label>Gender</label>
+    <select id="gender">
+      <option>Female</option>
+      <option>Male</option>
+      <option>unknown</option>
+    </select>
+    <label>Species</label>
+    <select id="species">
+      <option>Human</option>
+      <option>Alien</option>
+      <option>Humanoid</option>
+      <option>Animal</option>
+      <option>Robot</option>
+      <option>Vampire</option>
+      <option>Mytholog</option>
+      <option>Cronenberg</option>
+      <option>unknown</option>
+    </select>
+    <label>Orden</label>
+    <select id="order">
+      <option value="A-Z">A-Z</option>
+      <option value="Z-A">Z-A</option>
+    </select>
+    <div id=categoriesContainer></div>
+    <input id=miInput type=search placeholder="Buscar por nombre">
   </div>
-
-  <nav>
-    <label>Prueba filtrar personajes</label>
-    <button></button>
-  </nav>
-
-  <body>
-    <div class="filterBox">
-      <label> Filtra por categorias</label>
-        <select id="category1">
-        <option value="">Escoge entre estas categorias</option>
-        <option value="Dead" id="dead">Dead</option>
-        <option value="gender">Género</option>
-        <option value="species">Especie</option>
-      </select>
-      <div id= categoriesContainer></div>
-      <input id=miInput type=search placeholder="Buscar por nombre">
-    </div>
-    <div class="cardContainer">
-      <div id="root"></div>
-      <script src="main.js" type="module"></script>
-    </div>
-</div>
+  <div class="cardContainer">
+    <div id="filtrado"></div>
+    <div id="root"></div>
+    <script src="main.js" type="module"></script>
+  </div>
+  </div>
 </body>
 
 </html>
