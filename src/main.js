@@ -1,7 +1,8 @@
 import data from "./data/rickandmorty/rickandmorty.js"
-import { filtrarVivo } from "./data.js"
+import { filterStatus, filterGender, filterSpecie } from "./data.js"
 
-// eslint-disable-next-line no-console
+
+
 
 const characters = data.results
 let characterHtml = ""
@@ -9,7 +10,7 @@ characters.forEach((character=> {
   characterHtml += `<div class= "card">
            <img src = "${character.image}"> 
           <div class="info">   
-          <h3>${character.name} </h3>
+          <h3>${character.name.toUpperCase()} </h3>
           <p>Status: ${character.status}</p>
           <p>Specie: ${character.species}</p>
           <p>Gender: ${character.gender}</p>
@@ -19,34 +20,116 @@ characters.forEach((character=> {
         </div>
        </div> `
 }))
-document.getElementById("data").innerHTML = characterHtml
+document.getElementById("root").innerHTML = characterHtml
 
 
 
-
-    window.addEventListener('DOMContentLoaded', () => {
+  /*  window.addEventListener('DOMContentLoaded', () => {
         // eslint-disable-next-line no-console
         console.log(filtrarVivo(characters,"Dead"))
     });
+  */
 
 
-let opcionesStatus = document.getElementById("status");
- opcionesStatus = document.createElement("option");
- document.write(opcionesStatus);
- 
-
-
- /*function filterBy(){
-    let optionsSelected = document.getElementById("category");
-    let finalOption = optionsSelected.value;
-    return finalOption
-    }
-
- document.getElementById("categoriesContainer").innerHTML = "opcionesFiltradas";
+//Filtrar por Status
+    document.getElementById("status").addEventListener("change", function(){
+      const statusHtml = document.getElementById("status").value
+      const characterStatus= filterStatus(characters, statusHtml)
     
-*/
+      let mostrarFiltro=""
+      characterStatus.forEach((filtrado=> {
+        mostrarFiltro += `<div class= "card">
+                 <img src = "${filtrado.image}"> 
+                <div class="tarjeta">   
+                <h3>${filtrado.name.toUpperCase()} </h3>
+                <p>Status: ${filtrado.status}</p>
+                <p>Specie: ${filtrado.species}</p>
+                <p>Gender: ${filtrado.gender}</p>
+                <p>Type: ${filtrado.type}</p>
+                <p>Origin: ${filtrado.origin.name}</p>
+            
+              </div>
+             </div> `
+      }))
+        // eslint-disable-next-line no-console
+      //console.log(characterStatus)
+      document.getElementById("root").innerHTML = mostrarFiltro
 
-  /*   let optionStatus = document.getElementById("status") (filtrarVivo(characters, "Dead" || "Alive"))
-     let optionGender = document.getElementById("gender")(filtrarGenero(characters, "Female" || "Male"))
-     let optionSpecies =document.getElementById("species")(filtrarEspecie(characters, "Human" || "Alien"))
-*/
+    })
+
+//Filtar pos Género
+document.getElementById("gender").addEventListener("change", function(){
+  const genderHtml = document.getElementById("gender").value
+  const characterGender= filterGender(characters, genderHtml)
+  
+  let mostrarFiltro=""
+characterGender.forEach((filtrado=> {
+  mostrarFiltro += `<div class= "card">
+           <img src = "${filtrado.image}"> 
+          <div class="tarjeta">   
+          <h3>${filtrado.name.toUpperCase()} </h3>
+          <p>Status: ${filtrado.status}</p>
+          <p>Specie: ${filtrado.species}</p>
+          <p>Gender: ${filtrado.gender}</p>
+          <p>Type: ${filtrado.type}</p>
+          <p>Origin: ${filtrado.origin.name}</p>
+      
+        </div>
+       </div> `
+}))
+
+// eslint-disable-next-line no-console
+  //console.log(characterGender)
+document.getElementById("root").innerHTML = mostrarFiltro
+})
+
+
+
+//Filtrar por Especie
+
+document.getElementById("species").addEventListener("change", function(){
+  const specieHtml = document.getElementById("species").value
+  const characterSpecie= filterSpecie(characters, specieHtml)
+  let mostrarFiltro=""
+  characterSpecie.forEach((filtrado=> {
+    mostrarFiltro += `<div class= "card">
+             <img src = "${filtrado.image}"> 
+            <div class="tarjeta">   
+            <h3>${filtrado.name.toUpperCase()} </h3>
+            <p>Status: ${filtrado.status}</p>
+            <p>Specie: ${filtrado.species}</p>
+            <p>Gender: ${filtrado.gender}</p>
+            <p>Type: ${filtrado.type}</p>
+            <p>Origin: ${filtrado.origin.name}</p>
+        
+          </div>
+         </div> `
+  }))
+  
+  document.getElementById("root").innerHTML = mostrarFiltro
+
+  // eslint-disable-next-line no-console
+  //console.log(characterSpecie)
+})
+
+/* //Filtrar por Alfabeto
+document.getElementById("order").addEventListener("change", function(){
+  const orderHtml = document.getElementById("order").value
+  const orderAlphabet= filterName(characters, orderHtml)
+  // eslint-disable-next-line no-console
+  console.log(orderAlphabet)
+})
+ */
+
+    
+    
+
+
+
+
+
+
+
+
+
+ 
