@@ -20,30 +20,5 @@ characters.forEach((character=> {
 }))
 document.getElementById("data").innerHTML = characterHtml
 
-//Filtrar por Status
-/* function filterStatus(characters, status){
-  let result = characters.filter(character=>character.status==status)
-  return result
-} */
 
-// eslint-disable-next-line no-console
-//console.log(filterStatus(characters,"Alive"))
-
-const filtersName=document.getElementById("name");
-  filtersName.addEventListener("click",filter)
-    function filter (){
-     characters.sort(function(a, b){
-    if (a.name < b.name) //sort string ascending
-     return -1;
-    else if  (a.name > b.name)
-     return 1;
-     return 0
-   })
-   
  
-  }
-  document.getElementById("name").innerHTML= filter.value
-  
-// eslint-disable-next-line no-undef
-// eslint-disable-next-line no-console
-console.log(filter)
