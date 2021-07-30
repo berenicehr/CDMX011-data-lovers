@@ -23,7 +23,7 @@ for (let i = 0; i < characters.length; i++) {
 // eslint-disable-next-line no-console
 console.log(charactersHtml);
 
-document.getElementById('root').innerHTML = charactersHtml
+/*document.getElementById('root').innerHTML = charactersHtml */
 
 
 let tarjetas = document.getElementById("root")
@@ -39,24 +39,36 @@ tarjetas.addEventListener("click", function(){
         console.log(filtrarVivo(characters,"Dead"))
     });
 
+/*const container1= document.getElementById("categoriesContainer");
+let aliveCharacters= document.createElement("div")
+aliveCharacters.innerHTML="Alive characters cards"
+Container1.appendChild(aliveCharacters);
 
-let opcionesStatus = document.getElementById("status");
- opcionesStatus = document.createElement("option");
- document.write(opcionesStatus);
- 
+const container2= document.getElementById("categoriesContainer");
+let deadCharacters= document.createElement("div")
+deadCharacters.innerHTML="Dead characters cards"
+Container2.appendChild(deadCharacters);
 
-
- /*function filterBy(){
-    let optionsSelected = document.getElementById("category");
-    let finalOption = optionsSelected.value;
-    return finalOption
-    }
-
- document.getElementById("categoriesContainer").innerHTML = "opcionesFiltradas";
-    
+const container3= document.getElementById("categoriesContainer");
+let unknownStatusCharacters= document.createElement ("div", "class=c3")
+unknownStatusCharacters.innerHTML=`Not dead or alive (to be confirmed)
+<br>${charactersHtml}`
+Container3.appendChild(unknownStatusCharacters);
 */
 
-  /*   let optionStatus = document.getElementById("status") (filtrarVivo(characters, "Dead" || "Alive"))
-     let optionGender = document.getElementById("gender")(filtrarGenero(characters, "Female" || "Male"))
-     let optionSpecies =document.getElementById("species")(filtrarEspecie(characters, "Human" || "Alien"))
+document.getElementById("category1").addEventListener("change", function(){
+
+    const statusDead = document.getElementById("dead").value
+    const personajesFiltrados= filtrarVivo(characters, statusDead)
+    // eslint-disable-next-line no-console
+    console.log (personajesFiltrados)
+
+    /*
+    const container3= document.getElementById("categoriesContainer");
+    let unknownStatusCharacters= document.createElement ("div", "class=c3")
+    unknownStatusCharacters.innerHTML=`Not dead or alive (to be confirmed)
+    <br>${personajesFiltrados}`
+    container3.appendChild(unknownStatusCharacters);
 */
+}
+)

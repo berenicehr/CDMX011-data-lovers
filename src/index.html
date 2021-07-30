@@ -25,12 +25,12 @@
 
   <body>
     <div class="filterBox">
-      <label> Filtrar por</label>
-      <select id="category" onchange ="filterBy()">
-        <option disabled="">Escoge entre estas categorias</option>
-        <option id="status">Status</option>
-        <option id="gender">Género</option>
-        <option id="species">Especie</option>
+      <label> Filtra por categorias</label>
+        <select id="category1">
+        <option value="">Escoge entre estas categorias</option>
+        <option value="Dead" id="dead">Dead</option>
+        <option value="gender">Género</option>
+        <option value="species">Especie</option>
       </select>
       <div id= categoriesContainer></div>
       <input id=miInput type=search placeholder="Buscar por nombre">

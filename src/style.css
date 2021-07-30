@@ -37,3 +37,7 @@ body{
     padding:50px;
     display: flex;
 }
+
+div {
+    display: block;
+}
