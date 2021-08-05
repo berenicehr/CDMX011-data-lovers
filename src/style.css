@@ -3,53 +3,120 @@
     margin: 0;
     padding: 0;
 }
+
+body{
+    padding:0;
+    background: #0ACA9C;
+    margin: 0;
+    
+}
+
+.container{
+
+    width: 90%;
+    max-width: 1000px;
+    box-sizing: border-box;
+    background-color: brown;
+    margin: auto;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    
+}
+    
+    
 header{
+    width:100%;
     background-color: white;
-    padding : 75px;
+    padding : 20px;
 
     font-family: 'Orienta', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 72px;
-    line-height: 86px;
-    text-align: left;
-
+    font-size: 64px;
+    line-height: 50px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 
 color: #000000;
 }
 
-.logo{
-    position: absolute;
-    width: 341px;
-    height: 90px;
-    left: 1000px;
-    top: 50px;
+
+
+img{
+    width: 200px;
+    height: 200px;
+    left: 700px;
+    vertical-align: top;
+    
+}
+
+nav{
+    width:100%;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: burlywood;
+    display: flex;
+    flex-wrap: wrap;
 
 }
 
-div#root{
+select{
+    display: inline-flex;
+    flex-grow: 1;
+}
+
+main{
+    flex: 100%;
+}
+#root{
+    
+    box-sizing: border-box;
+    height: auto;
     display: flex;
     flex-wrap:wrap;
-    
+    justify-content: flex-start;
+    flex-direction:initial;
+
     
 
 }
 
-body{
-    background: #0ACA9C;
-    top: 205px;
-}
+
+
+
 
 .card{
 
-    margin:50px;
-    padding:50px;
+    margin:20px;
+    padding:40px;
     background-color: hsl(240deg 8% 93%);
     border-radius: 20px;
     text-align: center;
+    box-sizing: border-box;
+    box-align: center;
+    flex: 0 0;
 
 }
 
-div {
-    display: block;
+@media screen and (max-width: 800px){
+    
+
+    .header{
+        padding: 0; 
+    }
+    img{
+        margin: 20px 0 ;
+        
+    }
+    nav{
+        padding: 10px 10px ;
+    }
 }
+

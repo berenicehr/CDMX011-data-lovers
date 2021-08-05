@@ -1,7 +1,7 @@
 
 // import data from './data/lol/lol.js';
 import data from "./data/rickandmorty/rickandmorty.js"
-import { filterStatus, filterGender, filterSpecie } from './data.js';
+import { filterStatus, filterGender, filterSpecie, filterName } from './data.js';
 
 const characters = data.results
 let characterHtml = ""
@@ -102,5 +102,26 @@ document.getElementById("root").innerHTML = mostrarFiltro
 //console.log(characterSpecie)
 })
 
+document.getElementById("order").addEventListener("change", function(){
+  const orderHtml = document.getElementById("order").value
+  const orderAlphabet=filterName(characters, orderHtml)
+  let mostrarOrden=""
+  orderAlphabet.forEach((orden=> {
+     mostrarOrden+= `<div class= "card">
+             <img src = "${orden.image}"> 
+            <div class="tarjeta">   
+            <h3>${orden.name.toUpperCase()} </h3>
+            <p>Status: ${orden.status}</p>
+            <p>Specie: ${orden.species}</p>
+            <p>Gender: ${orden.gender}</p>
+            <p>Type: ${orden.type}</p>
+            <p>Origin: ${orden.origin.name}</p>
+        
+          </div>
+         </div> `
+  }))
+  
+  document.getElementById("root").innerHTML = mostrarOrden
+})
 
  

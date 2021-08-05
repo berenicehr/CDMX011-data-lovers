@@ -28,15 +28,25 @@ export function filterSpecie(data,tipo){
   return resultado
 }
 
-//Filtrar por Alfabeto
-/* 
-export const filterName = (data, order) => {
-  let resultado =data.sort((a, b) => {
-          if (a.name < b.name) {
-              return -1;
-          } else if (a.name> b.name) {
-              return 1;
-          } else {
-              return 0;
-          }}}
-      */
+export function filterName(data, condition) {
+  let resultado = ""
+  if (condition === "A-Z") {
+    resultado = data.sort((a, b) => {
+      if (a.name > b.name) {
+        return 1
+      } else{
+        return -1
+      }
+    });
+  } else {
+    resultado = data.sort((a, b) => {
+      if (a.name < b.name) {
+        return 1
+      } else{
+        return -1
+        }
+    })
+  }
+  return resultado
+}
+
