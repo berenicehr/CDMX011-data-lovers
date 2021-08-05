@@ -5,20 +5,20 @@
   <meta charset="utf-8">
   <title>Data Lovers 15</title>
   <meta name="viewport" content="width=device-width, user scalable=no, initial-scale=1.0
-  maximum-scale=1.0, minimum-scale=1.0">
+  maximum-scale=1.o, minimum-scale=1.0">
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <body>
+<body>
+  
   <div class="container">
     <header> Rick and Morty Universe
-      <img src="./data/imagenes/Mask Group.png" alt="logo">
+      <img id= "logo"src="./data/imagenes/Mask Group.png" alt="logo">
     </header>
     <nav>
-      <p>Try our filter action on the show characters</p>
-        <label> Pick one between these categories</label>
-        
+      <label>Try our filter action on the show characters</label>
+         <div id="selectors">
         <label>Status</label>
         <select id="status">
           <option>Alive</option>
@@ -43,18 +43,19 @@
           <option>Cronenberg</option>
           <option>unknown</option>
         </select>
-        <label>Orden</label>
+        <label>Sort Order</label>
         <select id="order">
-          <option value="A-Z">A-Z</option>
-          <option value="Z-A">Z-A</option>
+          <option>A-Z</option>
+          <option>Z-A</option>
         </select>
-      </nav>
-  <main>
-    <div id="filtrado"></div>
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </main>    
-</div>
+      </div>
+    </nav>
+    <main>
+      <div id="filtrado"></div>
+      <div id="root"></div>
+      <script src="main.js" type="module"></script>
+    </main>
+  </div>
 </body>
 
 </html>
