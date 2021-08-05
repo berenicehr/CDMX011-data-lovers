@@ -1,51 +1,157 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+ 
 }
-header{
-    background-color: white;
-    padding : 75px;
-
-    font-family: 'Orienta', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 72px;
-    line-height: 86px;
-    text-align: left;
-
-
-color: #000000;
-}
-
-.logo{
-    position: absolute;
-    width: 341px;
-    height: 90px;
-    left: 1000px;
-    top: 50px;
-
-}
-
-div#root{
+body {
+    background: #21212c;
+    width: 100%;
+    /*  display: flex;
+    flex-flow: row wrap; */ 
+    }
+  .container{
+    width: 90%;
+    max-width: 1500px;
+    box-sizing: border-box; 
+    margin: auto;
     display: flex;
-    flex-wrap:wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     
+   
+  }
+
+header {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  font-family: 'Lakki Reddy', cursive;
+  font-size: 100px;
+  text-align: left;
+  color: rgb(17, 143, 182);
+  text-shadow: 0px 0px 10px rgb(250, 250, 0);
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+
+#logo{
+ 
+ 
+  width:200px;
+  height: 200px;
+ /*  left: 700px; */
+  vertical-align: top;
+
+}
+ #root{
+   /*  display: flex;
+    flex-flow: row wrap; */
+    box-sizing: border-box;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    flex-direction: initial;
+   
+} 
+nav{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem 10rem;
+}
+
+
+  
+   select {
+    border-radius: 0.5rem;
+    border: 2px solid rgb(1, 53, 13); 
+    background-color: chartreuse;
+    padding: 0.2rem; 
+    font-size: 1.2rem;
+    color:black(47, 120, 230); 
+    outline:rgb(7, 7, 7); 
+    width: 10%;
+    text-align: justify;
+    display: inline-flex;
+    /* flex-grow: 1; */
     
 
 }
+select:hover{
+    background-color:yellow;
+    box-shadow: 0px 0px 10px rgb(253, 253, 32);
 
-body{
-    background: #0ACA9C;
-    top: 205px;
+} 
+
+label{
+    color: rgb(247, 206, 247);
+    font-size: 1.5rem;
 }
 
-.card{
-
-    margin:50px;
-    padding:50px;
-    background-color: hsl(240deg 8% 93%);
-    border-radius: 20px;
-    text-align: center;
+main{
+  flex: 100%;
+}
+img {
+  border-radius: 10rem;
+  width: 90%;
+  margin: 0.5rem;
+  padding-bottom: 1rem;
 
 }
+
+.card {
+  height: 500px;
+  width: 300px; 
+  margin: 20px ;
+  padding: 40px;
+  border: solid 4px yellow;
+  box-shadow: rgb(200, 255, 0) 0px 0px 10px;
+  border-radius: 20px;
+ box-sizing: border-box; 
+ 
+ 
+
+}
+
+.card:hover {
+  border: solid 4px rgb(0, 255, 21);
+  box-shadow: rgb(0, 255, 85) 0px 0px 40px;
+
+}
+
+.info {
+  padding: 0.5rem 0.5rem;
+  width: 100%;
+  text-align: left;
+  background-color: #06f539;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
+  border-radius: 15px;
+  box-sizing: border-box; 
+}
+
+h3 {
+  text-align: center;
+  line-height: 1.7rem;
+  padding: .5rem 1rem;
+  font-size: 1.7rem;
+}
+
+@media screen and (max-width:800px) {
+  #logo{
+    margin: 20px;
+
+  }
+  nav{
+    padding:10px 10px;
+  }
+  
+}
+  
