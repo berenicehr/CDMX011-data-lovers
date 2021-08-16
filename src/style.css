@@ -115,9 +115,17 @@ img {
   box-shadow: rgb(200, 255, 0) 0px 0px 10px;
   border-radius: 20px;
  box-sizing: border-box; 
+ justify-content: center;
  
- 
+} 
 
+
+img{
+    width: 200px;
+    height: 200px;
+    left: 700px;
+    vertical-align: top;
+    
 }
 
 .card:hover {
@@ -148,6 +156,9 @@ h3 {
   #logo{
     margin: 20px;
 
+  }
+  header{
+      font-size: 60px;
   }
   nav{
     padding:10px 10px;
