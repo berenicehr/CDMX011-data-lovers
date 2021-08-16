@@ -1,5 +1,5 @@
 import data from "./data/rickandmorty/rickandmorty.js"
-import { filterStatus, filterGender, filterSpecie,filterName } from "./data.js"
+import { filterStatus, filterGender, filterSpecie,filterName, filterByName } from "./data.js"
 
 
 
@@ -23,29 +23,37 @@ characters.forEach((character=> {
 }))
 document.getElementById("root").innerHTML = characterHtml
 
+
+  /*  window.addEventListener('DOMContentLoaded', () => {
+        // eslint-disable-next-line no-console
+        console.log(filtrarVivo(characters,"Dead"))
+    });
+  */
+
+
 //Filtrar por Status
     document.getElementById("status").addEventListener("change", function(){
       const statusHtml = document.getElementById("status").value
       const characterStatus= filterStatus(characters, statusHtml)
     
-      let mostrarFiltro=""
-      characterStatus.forEach((filtrado=> {
-        mostrarFiltro += `<div class= "card">
-                 <img src = "${filtrado.image}"> 
+      let showStatusFilter=""
+      characterStatus.forEach((card=> {
+        showStatusFilter += `<div class= "card">
+                 <img src = "${card.image}"> 
                 <div class="info">   
-                <h3>${filtrado.name} </h3>
-                <p><b>Status:</b> ${filtrado.status}</p>
-                <p><b>Specie:</b> ${filtrado.species}</p>
-                <p><b>Gender:</b> ${filtrado.gender}</p>
-                <p><b>Type:</b> ${filtrado.type}</p>
-                <p><b>Origin:</b> ${filtrado.origin.name}</p>
+                <h3>${card.name} </h3>
+                <p><b>Status:</b> ${card.status}</p>
+                <p><b>Specie:</b> ${card.species}</p>
+                <p><b>Gender:</b> ${card.gender}</p>
+                <p><b>Type:</b> ${card.type}</p>
+                <p><b>Origin:</b> ${card.origin.name}</p>
             
               </div>
              </div> `
       }))
         // eslint-disable-next-line no-console
       //console.log(characterStatus)
-      document.getElementById("root").innerHTML = mostrarFiltro
+      document.getElementById("root").innerHTML = showStatusFilter
 
     })
 
@@ -54,17 +62,17 @@ document.getElementById("gender").addEventListener("change", function(){
   const genderHtml = document.getElementById("gender").value
   const characterGender= filterGender(characters, genderHtml)
   
-  let mostrarFiltro=""
-characterGender.forEach((filtrado=> {
-  mostrarFiltro += `<div class= "card">
-           <img src = "${filtrado.image}"> 
+  let showGenderFilter=""
+characterGender.forEach((card=> {
+  showGenderFilter += `<div class= "card">
+           <img src = "${card.image}"> 
           <div class="info">   
-          <h3>${filtrado.name} </h3>
-          <p><b>Status:</b> ${filtrado.status}</p>
-          <p><b>Specie:</b> ${filtrado.species}</p>
-          <p><b>Gender: </b>${filtrado.gender}</p>
-          <p><b>Type: </b>${filtrado.type}</p>
-          <p><b>Origin: </b>${filtrado.origin.name}</p>
+          <h3>${card.name} </h3>
+          <p><b>Status:</b> ${card.status}</p>
+          <p><b>Specie:</b> ${card.species}</p>
+          <p><b>Gender: </b>${card.gender}</p>
+          <p><b>Type: </b>${card.type}</p>
+          <p><b>Origin: </b>${card.origin.name}</p>
       
         </div>
        </div> `
@@ -72,57 +80,83 @@ characterGender.forEach((filtrado=> {
 
 // eslint-disable-next-line no-console
   //console.log(characterGender)
-document.getElementById("root").innerHTML = mostrarFiltro
+document.getElementById("root").innerHTML = showGenderFilter
 })
 
 // Specie
 document.getElementById("species").addEventListener("change", function(){
-  const genderHtml = document.getElementById("species").value
-  const characterSpecie= filterSpecie(characters, genderHtml)
-  
-  let mostrarFiltro=""
-  characterSpecie.forEach((filtrado=> {
-    mostrarFiltro += `<div class= "card">
-             <img src = "${filtrado.image}"> 
+  const specieHtml = document.getElementById("species").value
+  const characterSpecie= filterSpecie(characters, specieHtml)
+  let showSpeciesFilter=""
+  characterSpecie.forEach((card=> {
+    showSpeciesFilter += `<div class= "card">
+             <img src = "${card.image}"> 
             <div class="info">   
-            <h3>${filtrado.name} </h3>
-            <p ><b>Status:</b>${filtrado.status}</p>
-            <p><b>Specie:</b>${filtrado.species}</p>
-            <p><b>Gender: </b>${filtrado.gender}</p>
-            <p><b>Type:</b> ${filtrado.type}</p>
-            <p><b>Origin:</b> ${filtrado.origin.name}</p>
+            <h3>${card.name} </h3>
+            <p ><b>Status:</b>${card.status}</p>
+            <p><b>Specie:</b>${card.species}</p>
+            <p><b>Gender: </b>${card.gender}</p>
+            <p><b>Type:</b> ${card.type}</p>
+            <p><b>Origin:</b> ${card.origin.name}</p>
         
           </div>
          </div> `
   }))
-    // eslint-disable-next-line no-console
-  //console.log(characterStatus)
-  document.getElementById("root").innerHTML = mostrarFiltro
- 
+  
+  document.getElementById("root").innerHTML = showSpeciesFilter
+
+  // eslint-disable-next-line no-console
+  //console.log(characterSpecie)
 })
+
+//Filtrar por nombre
+document.getElementById("buscar").addEventListener("click", function (){
+  const input= document.getElementById("input").value
+  const buscar = filterByName(characters, input)
+  let buscarByName = ""
+  buscar.forEach((orden=> {
+    buscarByName+= `<div class= "card">
+            <img src = "${orden.image}"> 
+           <div class="info">   
+           <h3>${orden.name} </h3>
+           <p><b>Status:</b> ${orden.status}</p>
+           <p><b>Specie:</b> ${orden.species}</p>
+           <p><b>Gender: </b>${orden.gender}</p>
+           <p><b>Type: </b>${orden.type}</p>
+           <p><b>Origin: </b>${orden.origin.name}</p>
+       
+         </div>
+        </div> `
+ }))
+ 
+ document.getElementById("root").innerHTML = buscarByName
+ // eslint-disable-next-line no-console
+ console.log(buscar)
+})
+
 
 
  //Filtrar por Alfabeto
 document.getElementById("order").addEventListener("change", function(){
   const orderHtml = document.getElementById("order").value
   const orderAlphabet=filterName(characters, orderHtml)
-  let mostrarOrden=""
-  orderAlphabet.forEach((orden=> {
-     mostrarOrden+= `<div class= "card">
-             <img src = "${orden.image}"> 
+  let inOrder=""
+  orderAlphabet.forEach((order=> {
+     inOrder+= `<div class= "card">
+             <img src = "${order.image}"> 
             <div class="info">   
-            <h3>${orden.name} </h3>
-            <p><b>Status:</b> ${orden.status}</p>
-            <p><b>Specie:</b> ${orden.species}</p>
-            <p><b>Gender: </b>${orden.gender}</p>
-            <p><b>Type: </b>${orden.type}</p>
-            <p><b>Origin: </b>${orden.origin.name}</p>
+            <h3>${order.name} </h3>
+            <p><b>Status:</b> ${order.status}</p>
+            <p><b>Specie:</b> ${order.species}</p>
+            <p><b>Gender: </b>${order.gender}</p>
+            <p><b>Type: </b>${order.type}</p>
+            <p><b>Origin: </b>${order.origin.name}</p>
         
           </div>
          </div> `
   }))
   
-  document.getElementById("root").innerHTML = mostrarOrden
+  document.getElementById("root").innerHTML = inOrder
 })
 
  

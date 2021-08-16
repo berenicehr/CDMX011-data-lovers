@@ -1,39 +1,34 @@
-// estas funciones son de ejemplo
-
-export const example = () => {
-  return 'example';
-};
-
-export const anotherExample = () => {
-  return 'OMG';
-};
-
-
 
 //Fitrar por Status
-export function filterStatus(data, tipo) {
-  let resultado = data.filter(character => character.status == tipo)
-  return resultado
+export function filterStatus(data, type) {
+  let result = data.filter(character => character.status == type)
+  return result
 }
 
 //Filtar por Género
-export function filterGender(data, tipo) {
-  let resultado = data.filter(character => character.gender == tipo)
-  return resultado
+export function filterGender(data, type) {
+  let result = data.filter(character => character.gender == type)
+  return result
 }
 
 //Filtrar por Especie
-export function filterSpecie(data, tipo) {
-  let resultado = data.filter(character => character.species == tipo)
-  return resultado
+export function filterSpecie(data, type) {
+  let result = data.filter(character => character.species == type)
+  return result
 }
+
+ export function filterByName(data, nombre){
+  let result = data.filter(element => element.name.toLowerCase().indexOf(nombre) !==-1)
+   return result
+  }
+
 
 //Filtrar por Alfabeto
 
 export function filterName(data, condition) {
-  let resultado = ""
+  let result = ""
   if (condition === "A-Z") {
-    resultado = data.sort(function(a, b){
+    result = data.sort(function(a, b){
       if (a.name > b.name) {
         return 1
       } else{
@@ -41,7 +36,7 @@ export function filterName(data, condition) {
       }
     });
   } else { //para ordenar de Z-A
-    resultado = data.sort((a, b) => {
+    result = data.sort((a, b) => {
       if (a.name < b.name) {
         return 1
       } else{
@@ -49,5 +44,5 @@ export function filterName(data, condition) {
         }
     })
   }
-  return resultado
+  return result
 }
