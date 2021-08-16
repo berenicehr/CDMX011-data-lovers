@@ -124,6 +124,7 @@ img {
   box-shadow: rgb(200, 255, 0) 0px 0px 10px;
   border-radius: 20px;
  box-sizing: border-box; 
+ justify-content: center;
  
 }
 
@@ -165,6 +166,9 @@ h3 {
     margin: 20px;
     padding: 5px;
 
+  }
+  header{
+      font-size: 60px;
   }
   nav{
     padding:5px 5px;

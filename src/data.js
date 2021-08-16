@@ -35,7 +35,7 @@ export function filterName(data, condition) {
         return -1
       }
     });
-  } else { //para ordenar de Z-A
+  } else if (condition === "Z-A") { //para ordenar de Z-A
     result = data.sort((a, b) => {
       if (a.name < b.name) {
         return 1
@@ -46,3 +46,4 @@ export function filterName(data, condition) {
   }
   return result
 }
+

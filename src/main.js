@@ -158,5 +158,27 @@ document.getElementById("order").addEventListener("change", function(){
   
   document.getElementById("root").innerHTML = inOrder
 })
+/*
+document.getElementById("order").addEventListener("change", function(){
+  const orderHtml = document.getElementById("order").value
+  const orderAlphabet=filterName(characters, orderHtml)
+  let mostrarOrden=""
+  orderAlphabet.forEach((orden=> {
+     mostrarOrden+= `<div class= "card">
+             <img src = "${orden.image}"> 
+            <div class="tarjeta">   
+            <h3>${orden.name.toUpperCase()} </h3>
+            <p>Status: ${orden.status}</p>
+            <p>Specie: ${orden.species}</p>
+            <p>Gender: ${orden.gender}</p>
+            <p>Type: ${orden.type}</p>
+            <p>Origin: ${orden.origin.name}</p>
+        
+          </div>
+         </div> `
+  }))
+  
+  document.getElementById("root").innerHTML = mostrarOrden
+})
 
- 
+*/ 

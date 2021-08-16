@@ -1,4 +1,54 @@
-import {filterStatus, filterGender, filterSpecie, filterName } from "../src/data.js";
+
+import { filterGender, filterName, filterSpecie, filterStatus } from "../src/data.js";
+
+import { testCards, alienGoo, abadango,  } from "./mock.js";
+
+
+describe("Bloque para filtrado", () => {
+  it("Deberia encontrar 3 personajes masculinos", () => {
+    expect(filterGender(testCards, "Male")).toHaveLength(3);   
+}),
+
+ it("Debería reconocer a Alien Googah dentro del género unknown", () => {
+  expect(filterGender(alienGoo, "unknown")).toEqual(alienGoo);
+}),
+
+ it ("Deberían juntarse un total de 3 humanos", () => {
+   expect(filterSpecie(testCards, "Human")).toHaveLength(3);
+}),
+
+ it ("Alexander debería ser es el único personaje muerto", () => {
+   expect(filterStatus(testCards, "Dead")).toHaveLength(1);
+})
+
+});
+
+describe("Bloque de ordenamiento", () => {
+  it ("Los personajes en orden de A-Z no deberian cambiar el número de tarjetas", () =>{
+    const personajesOrden = filterName(testCards, "A-Z");
+    expect(personajesOrden).toHaveLength(5);
+  })
+  it ("El primer personaje en aparecer deberia ser Abadango, si ordenamos de A-Z", () => {
+    const personajesOrdenDescendente = filterName(testCards, "A-Z");
+    expect(personajesOrdenDescendente[0]).toEqual(abadango[0]);
+  })
+
+});
+
+describe("Bloque de ordenamiento ascendente", () => {
+  
+  it ("Si los personajes se ordenan de Z-A, la última posición deberia ser Abadango", () => {
+    const personajesOrdenDescendente = filterName(testCards, "Z-A");
+    expect(personajesOrdenDescendente[4]).toEqual(abadango[0]);
+  })
+
+});
+
+
+
+
+/*
+
 
 describe("filterStatus", () => {
   it("is a function", () => {
@@ -19,9 +69,11 @@ describe("filterStatus", () => {
       { name: "The", status: "Alive" }
     ];
 
-    expect(filterStatus(items, "Alive")).toEqual(status_items); //para probar que los objetos tienen los mismos tipos y estructura.
+    expect(filterStatus(items, "Alive")).toStrictEqual(status_items); //para probar que los objetos tienen los mismos tipos y estructura.
   });
 });
+
+
 
 
 //Prueba filter genero
@@ -64,7 +116,7 @@ describe("filterSpecie", () => {
     ];
     const specie_items = [
       { name: "And", species: "Animal" }
-     
+
     ];
 
     expect(filterSpecie(items, "Animal")).toStrictEqual(specie_items);
@@ -98,7 +150,7 @@ describe("filterName", () => {
 
     expect(filterName(items, "A-Z")).toStrictEqual(az_items);
   });
-  it("deberia ordenar nombres ascendientemente", () => {
+  it("deberia ordenar nombres ascendentemente", () => {
     const items = [
       { name: "Edward", value: 21 },
       { name: "Sharpe", value: 37 },
@@ -119,3 +171,5 @@ describe("filterName", () => {
     expect(filterName(items, "Z-A")).toStrictEqual(za_items);
   });
 });
+
+*/
