@@ -24,14 +24,34 @@ export function filterSpecie(data, type) {
 
 
 //Filtrar por Alfabeto
+export const filterName = (data, condition) => {
+  if (condition ==="A-Z"){
+    return data.sort(function (a,b){
+      if (a.name > b.name) {
+        return 1
+      } if (a.name < b.name) {
+        return -1
+      }
+    })
+  }
+    else if (condition === "Z-A"){
+    return data.sort(function (a,b){
+      if (a.name > b.name) {
+        return -1
+      } if (a.name < b.name) {
+        return 1
+      }
+    })
+  }
+}
 
-export function filterName(data, condition) {
+/*export function filterName(data, condition) {
   let result = ""
   if (condition === "A-Z") {
     result = data.sort(function(a, b){
       if (a.name > b.name) {
         return 1
-      } else{
+      } if (a.name < b.name) {
         return -1
       }
     });
@@ -39,11 +59,12 @@ export function filterName(data, condition) {
     result = data.sort((a, b) => {
       if (a.name < b.name) {
         return 1
-      } else{
+      } if (a.name > b.name){
         return -1
-        }
+      }
     })
   }
   return result
 }
 
+*/

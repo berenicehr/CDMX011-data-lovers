@@ -6,7 +6,8 @@ import { testCards, alienGoo, abadango,  } from "./mock.js";
 
 describe("Bloque para filtrado", () => {
   it("Deberia encontrar 3 personajes masculinos", () => {
-    expect(filterGender(testCards, "Male")).toHaveLength(3);   
+    expect(filterGender(testCards, "Male")).toHaveLength(3);  
+  
 }),
 
  it("Debería reconocer a Alien Googah dentro del género unknown", () => {
